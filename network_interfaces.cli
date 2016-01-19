@@ -1,0 +1,54 @@
+# list ip address details of each for a server 
+ip addr list
+
+# list ip address details for a specific interface
+ip addr list <interface> # ip addr list eth0
+
+# add a new IPv4 address & netmask
+ip addr add <IP address>/<CIDR> dev <device> # ip addr add 10.132.1.1/24 dev eth1
+
+# confirm the address has been added 
+ip addr list eth1
+
+# removing IP address 
+ip addr del <IP address>/<CIDR> dev <device> # ip addr del 10.132.1.1/24 dev eth1 
+
+# bring interface down using ip link on eth2
+ip link set eth2 down
+
+# bring interface back up 
+ip link set eth2 up 
+
+# check the state of an interface with ip
+ip addr eth2
+
+# view network statistics on all interfaces 
+ip -s link
+
+# view a single interface statistics 
+ip -s link ls <interface> # ip -s link ls eth0
+
+# additional information for that interface by using -s 
+ip -s -s link ls eth0
+
+## Monitoring Connections
+
+# list established TCP connections
+ss -t
+
+# list established UDP connections
+ss -u
+
+# list which port are listening to TCP connections on a server 
+ss -ltn
+
+# list which port is listening for UDP connectionslist which port is listening for UDP connections
+ss -lun
+
+# list which port is listening for UDP connections
+ss -lun
+
+# list which port is listening to both UDP & TCP connections 
+ss -ltun
+
+ 
